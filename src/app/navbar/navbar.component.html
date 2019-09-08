@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-toggleable-md navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand text-primary" href="https://github.com/LYZhelloworld/lyzhelloworld.github.io" target="_blank">lyzhelloworld.github.io</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<!-- Template: Navbar -->
+			<ul class="navbar-nav mr-auto" *ngFor="let nav of navs | async">
+				<li class="nav-item" [class.active]="nav.href === currentRoute">
+					<a class="nav-link" [routerLink]="nav.href">{{ nav.name }}<span class="sr-only" *ngIf="nav.href === currentRoute"> (current)</span></a>
+				</li>
+			</ul>
+			<!-- Template-end: Navbar -->
+			<div>
+				<a class="btn btn-outline-success" href="https://github.com/LYZhelloworld" target="_blank" aria-label="Follow @LYZhelloworld on GitHub">Follow @LYZhelloworld</a>
+			</div>
+		</div>
+	</div>
+</nav>

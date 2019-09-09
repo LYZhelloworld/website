@@ -7,9 +7,12 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<!-- Template: Navbar -->
-			<ul class="navbar-nav mr-auto" *ngFor="let nav of navs | async">
-				<li class="nav-item" [class.active]="nav.href === currentRoute">
-					<a class="nav-link" [routerLink]="nav.href">{{ nav.name }}<span class="sr-only" *ngIf="nav.href === currentRoute"> (current)</span></a>
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"
+					*ngFor="let nav of navs | async"
+					[routerLinkActive]="['active']"
+					[routerLinkActiveOptions]="{exact:true}">
+					<a class="nav-link" [routerLink]="[nav.href]">{{ nav.name }}<span class="sr-only"> (current)</span></a>
 				</li>
 			</ul>
 			<!-- Template-end: Navbar -->

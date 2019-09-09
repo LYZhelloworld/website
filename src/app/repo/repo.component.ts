@@ -29,7 +29,7 @@ export class RepoComponent implements OnInit {
     return this.http.get('/assets/json/repo.json');
   }
   
-  getBadgeClass(index: int) {
+  getBadgeClass(index: number) {
     index %= this.badgeClasses.length;
     return this.badgeClasses[index];
   }

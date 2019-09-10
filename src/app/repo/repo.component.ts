@@ -24,11 +24,11 @@ export class RepoComponent implements OnInit {
   ngOnInit() {
     this.repos = this.getRepo();
   }
-  
+
   getRepo() {
     return this.http.get('/assets/json/repo.json');
   }
-  
+
   getBadgeClass(index: number) {
     index %= this.badgeClasses.length;
     return this.badgeClasses[index];

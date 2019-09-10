@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.navs = this.getNav();
   }
-  
+
   getNav() {
     return this.http.get('/assets/json/nav.json');
   }

@@ -1,11 +1,18 @@
-<h1 class="mb-5">Pinned Repositories</h1>
-<div class="row">
-	<div class="col-6 mb-5" *ngFor="let repo of repos | async">
-		<h2><a href="{{ repo.href }}" target="_blank" class="text-white">{{ repo.name }}</a></h2>
-		<div class="text-light mb-1">{{ repo.description }}</div>
-		<span class="badge badge-pill" [ngClass]="getBadgeClass(i)"
-			*ngFor="let lang of repo.language; let i = index">
-			{{ lang }}
-		</span>
+<div class="mt-5">
+	<h1 class="mb-5">Pinned Repositories</h1>
+	<div class="row">
+		<div class="card col-md-6 col-12 mb-5" *ngFor="let repo of repos | async">
+			<div class="card-body">
+				<h2 class="card-title"><a href="{{ repo.href }}" target="_blank">{{ repo.name }}</a></h2>
+				<p class="card-text">
+					{{ repo.description }}<br/>
+					<span class="badge badge-pill" [ngClass]="getBadgeClass(i)"
+						*ngFor="let lang of repo.language; let i = index">
+						{{ lang }}
+					</span>
+				</p>
+				<a href="{{ repo.href }}" target="_blank" class="btn btn-outline-primary btn-sm">View</a>
+			</div>
+		</div>
 	</div>
 </div>

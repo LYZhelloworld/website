@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  bodyTag: HTMLBodyElement = document.getElementsByTagName('body')[0];
 
   constructor() { }
 
   ngOnInit() {
+    this.bodyTag.classList.add('bg-primary');
+  }
+  
+  ngOnDestroy() {
+    this.bodyTag.classList.remove('bg-primary');
   }
 
 }

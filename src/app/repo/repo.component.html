@@ -1,18 +1,27 @@
 <div class="mt-5">
-	<h1 class="mb-5">Pinned Repositories</h1>
 	<div class="row">
-		<div class="card col-md-6 col-12 mb-5" *ngFor="let repo of repos | async">
-			<div class="card-body">
-				<h2 class="card-title"><a href="{{ repo.href }}" target="_blank">{{ repo.name }}</a></h2>
-				<p class="card-text">
-					{{ repo.description }}<br/>
-					<span class="badge badge-pill" [ngClass]="getBadgeClass(i)"
-						*ngFor="let lang of repo.language; let i = index">
-						{{ lang }}
-					</span>
-				</p>
-				<a href="{{ repo.href }}" target="_blank" class="btn btn-outline-primary btn-sm">View</a>
+		<div class="col-sm-9 order-1">
+			<div class="row">
+				<div class="card col-12 mb-2" *ngFor="let repo of repos | async">
+					<div class="card-body">
+						<h2 class="card-title"><a href="{{ repo.href }}" target="_blank">{{ repo.name }}</a></h2>
+						<p class="card-text">
+							{{ repo.description }}<br/>
+							<span class="badge badge-pill" [ngClass]="getBadgeClass(i)"
+								*ngFor="let lang of repo.language; let i = index">
+								{{ lang }}
+							</span>
+						</p>
+						<a href="{{ repo.href }}" target="_blank" class="btn btn-outline-primary btn-sm">View</a>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div class="col-sm-3 pr-5">
+			<app-sidebar>
+				<div class="h3">Helloworld</div>
+				<div class="text-muted">Pinned Repositories</div>
+			</app-sidebar>
+		</div>	
 	</div>
 </div>

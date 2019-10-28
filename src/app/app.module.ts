@@ -8,6 +8,7 @@ import { RepoComponent } from './repo/repo.component';
 import { HomeComponent } from './home/home.component';
 import { HelloOldDriverComponent } from './repo/hello-old-driver/hello-old-driver.component';
 import { ImageToPdfComponent } from './repo/image-to-pdf/image-to-pdf.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ImageToPdfComponent } from './repo/image-to-pdf/image-to-pdf.component'
     RepoComponent,
     HomeComponent,
     HelloOldDriverComponent,
-    ImageToPdfComponent
+    ImageToPdfComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

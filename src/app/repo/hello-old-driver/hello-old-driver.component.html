@@ -1,0 +1,85 @@
+<div class="jumbotron jumbotron-fluid text-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<h1>Hello Old Driver</h1>
+				<h2 style="font-size: 1.5rem">A LLSS reader</h2>
+				<a href="https://github.com/LYZhelloworld/image-2-pdf-Go" target="_blank"
+					class="btn btn-success mt-5">View
+					code</a>
+			</div>
+			<div class="col-md-5 hidden-sm">
+				<code class="usage-example">
+					$ llss<br/>
+					Lorem ipsum<br/>
+					magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef<br/>
+					Dolor sit amet<br/>
+					magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef<br/>
+					Consectetur adipiscing elit<br/>
+					magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef<br/>
+					magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef<br/>
+					...
+				</code>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h3>REGEXP analyser</h3>
+			<p>Remove unnecessary page contents, and list "secret codes" only.</p>
+			<p>Hidden contents are also visible as long as they are in the HTML source code.</p>
+		</div>
+		<div class="col-md-4">
+			<h3>Auto-detect domain name</h3>
+			<p>Search the true domain name, no matter how it changes.</p>
+			<p>LLSS changes domain name frequently. Thanks to the publisher page, it is able to retrieve the latest
+				domain name.</p>
+		</div>
+		<div class="col-md-4">
+			<h3>Multi-threading</h3>
+			<p>Crawl pages according to Wordpress RSS Feed.</p>
+			<p>Unlink traditional crawlers, it reads from RSS Feed first to get latest posts. Instead of scanning
+				thousands of pages, it is usually a better choice to read from new posts only.</p>
+		</div>
+	</div>
+	<hr />
+	<div>
+		<h2>Requirements</h2>
+		<p>Go 1.11+</p>
+		<a href="https://github.com/LYZhelloworld/image-2-pdf-Go" target="_blank" class="btn btn-lg btn-primary">View
+			code</a><br />
+		<p class="text-muted">
+			Legacy version:
+			<a href="https://github.com/LYZhelloworld/image-2-pdf-Python" target="_blank" class="text-muted">Python</a>
+			,
+			<a href="https://github.com/LYZhelloworld/image-2-pdf-CSharp" target="_blank" class="text-muted">C#</a>
+		</p>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Build</h2>
+			<p>Output folder: <code>./bin</code></p>
+			<h3>Linux</h3>
+			<pre><code>make<br /><br /># To clean output folder<br />make clean</code></pre>
+			<h3>Windows</h3>
+			<pre><code>build</code></pre>
+		</div>
+		<div class="col-md-6">
+			<h2>Usage</h2>
+			<pre><code>llss [-h] [-p protocol] [-d domain] [page]</code></pre>
+			<dl>
+				<dt>page</dt>
+				<dd>The page number of result. Must be greater than 0. Default value is 1.</dd>
+				<dt>-d string</dt>
+				<dd>Domain used to get the feed (auto checks domain if not given)</dd>
+				<dt>-h</dt>
+				<dd>Show help</dd>
+				<dt>-p string</dt>
+				<dd>Protocol used to get the feed, like "http" or "https" (default "https")</dd>
+			</dl>
+		</div>
+	</div>
+</div>

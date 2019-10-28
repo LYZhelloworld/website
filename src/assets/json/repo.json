@@ -7,9 +7,10 @@
 	},
 	{
 		"name":"Hello-Old-Driver-Go",
-		"href":"https://github.com/LYZhelloworld/Hello-Old-Driver-Go",
-		"description":"A LLSS reader (Go implementation)",
-		"language":["Go"]
+		"href":"repo/hello-old-driver",
+		"href-local":true,
+		"description":"A LLSS reader",
+		"language":["Go", "Python", "C#"]
 	},
 	{
 		"name":"Website",

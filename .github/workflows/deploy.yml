@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [master]
+    branches: [master, users/Helloworld/feature/auto-deploy]
 
 jobs:
   deploy:

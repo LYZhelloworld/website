@@ -12,16 +12,16 @@ export default {
   components: {
     NavBar,
     HomePage
-}
+  },
+  beforeCreate: () => {
+    document.body.className = 'bg-primary'
+    document.body.style.width = '100vw'
+    document.body.style.height = '100vh'
+  }
 }
 </script>
 
 <style>
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
 #app {
   height: 100%;
 }

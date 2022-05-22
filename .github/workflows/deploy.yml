@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [master, users/Helloworld/feature/auto-deploy]
+    branches: [master]
 
 jobs:
   deploy:
@@ -22,5 +22,6 @@ jobs:
         repository-name: LYZhelloworld/lyzhelloworld.github.io
         git-config-name: github-actions[bot]
         git-config-email: github-actions[bot]@users.noreply.github.com
-        clean-exclude: README.md
+        clean-exclude: |
+          README.md
         ssh-key: ${{ secrets.DEPLOY_KEY }}

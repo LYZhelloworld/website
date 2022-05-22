@@ -23,4 +23,3 @@ jobs:
         git-config-name: Helloworld
         git-config-email: 1326521+LYZhelloworld@users.noreply.github.com
         clean-exclude: README.md
-        dry-run: true

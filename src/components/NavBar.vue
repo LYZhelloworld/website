@@ -1,32 +1,26 @@
 <template>
-  <b-navbar toggleable="md" type="dark" variant="dark">
-    <b-container>
-      <b-navbar-brand
-          class="text-primary"
-          href="https://github.com/LYZhelloworld/lyzhelloworld.github.io"
-          target="_blank"
-          rel="noopener noreferrer">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-primary" href="https://github.com/LYZhelloworld/lyzhelloworld.github.io"
+        target="_blank" rel="noopener noreferrer">
         lyzhelloworld.github.io
-      </b-navbar-brand>
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item href="#" active>Home</b-nav-item>
-        </b-navbar-nav>
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-collapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Right aligned nav items -->
+      <div class="collapse navbar-collapse" id="nav-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        </ul>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <b-button
-              variant="outline-success"
-              href="https://github.com/LYZhelloworld"
-              target="_blank"
-              rel="noopener noreferrer">
-            Follow @LYZhelloworld
-          </b-button>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-container>
-  </b-navbar>
+        <div>
+          <a class="btn btn-outline-success" href="https://github.com/LYZhelloworld" target="_blank"
+            rel="noopener noreferrer">Follow @LYZhelloworld</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -36,5 +30,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

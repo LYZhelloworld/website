@@ -1,31 +1,27 @@
 <template>
   <div class="pt-5 bg-primary" style="height: 100%">
-    <b-container fluid="" class="text-white text-center">
-      <b-row>
-        <b-col>
-          <img src="@/assets/avatar.png" class="avatar fadein" alt="avatar"/>
-        </b-col>
-      </b-row>
-      <b-row class="mt-4">
-        <b-col>
+    <div class="container text-white text-center">
+      <div class="row">
+        <div class="col">
+          <img src="@/assets/avatar.png" class="avatar fadein" alt="avatar" />
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
           <p class="mb-4 display-4">Hello, world.</p>
-          <b-button
-              variant="success"
-              class="mx-1"
-              href="https://github.com/LYZhelloworld"
-              target="_blank"
-              rel="noopener noreferrer">
+          <a class="btn btn-success mx-1" href="https://github.com/LYZhelloworld" target="_blank"
+            rel="noopener noreferrer">
             View in GitHub
-          </b-button>
-        </b-col>
-      </b-row>
-    </b-container>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "HomePage"
 }
 </script>
 
@@ -51,6 +47,7 @@ img.fadein {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -60,6 +57,7 @@ img.fadein {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -69,6 +67,7 @@ img.fadein {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

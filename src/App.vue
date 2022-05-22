@@ -1,30 +1,27 @@
 <template>
-  <div id="app">
-    <NavBar/>
-    <Home/>
-  </div>
+  <NavBar />
+  <HomePage />
 </template>
 
 <script>
-
-import Home from "@/components/Home";
-import NavBar from "@/components/NavBar";
+import NavBar from './components/NavBar.vue'
+import HomePage from './components/HomePage.vue'
 
 export default {
   name: 'App',
   components: {
     NavBar,
-    Home
+    HomePage
+  },
+  beforeCreate: () => {
+    document.body.className = 'bg-primary'
+    document.body.style.width = '100%'
+    document.body.style.height = '100%'
   }
 }
 </script>
 
 <style>
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
 #app {
   height: 100%;
 }

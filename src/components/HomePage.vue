@@ -21,9 +21,27 @@
 
 <script>
 export default {
-  name: "HomePage"
+  name: "HomePage",
+  beforeMount: () => {
+    document.body.classList.add('bg-primary');
+  },
+  beforeUnmount: () => {
+    document.body.classList.remove('bg-primary');
+  }
 }
 </script>
+
+<style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+</style>
 
 <style scoped>
 .avatar {

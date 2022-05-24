@@ -22,12 +22,6 @@
 <script>
 export default {
   name: "HomePage",
-  beforeMount: () => {
-    document.body.classList.add('bg-primary');
-  },
-  beforeUnmount: () => {
-    document.body.classList.remove('bg-primary');
-  }
 }
 </script>
 
@@ -36,6 +30,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity))
 }
 
 #app {

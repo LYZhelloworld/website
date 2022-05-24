@@ -3,17 +3,18 @@
   <HomePage />
 </template>
 
-<script>
-import NavBar from './components/NavBar.vue'
-import HomePage from './components/HomePage.vue'
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import NavBar from './components/NavBar.vue';
+import HomePage from './components/HomePage.vue';
 
-export default {
-  name: 'App',
+@Options({
   components: {
     NavBar,
-    HomePage
-  }
-}
+    HomePage,
+  },
+})
+export default class App extends Vue { }
 </script>
 
 <style>

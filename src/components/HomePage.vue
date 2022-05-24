@@ -1,6 +1,6 @@
 <template>
-  <div class="pt-5 bg-primary" style="height: 100%">
-    <div class="container text-white text-center">
+  <main class="main d-flex align-items-center justify-content-center h-100">
+    <div class="container text-white text-center mb-5">
       <div class="row">
         <div class="col">
           <img src="@/assets/avatar.png" class="avatar fadein" alt="avatar" />
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity))
+  background-color: rgb(var(--bs-primary-rgb)) !important;
 }
 
 #app {

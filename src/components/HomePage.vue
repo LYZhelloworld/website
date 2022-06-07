@@ -9,8 +9,13 @@
       <div class="row mt-4">
         <div class="col">
           <p class="mb-4 display-4">Hello, world.</p>
-          <a class="btn btn-success mx-1" href="https://github.com/LYZhelloworld" target="_blank"
-            rel="noopener noreferrer">
+          <a
+            class="btn btn-success mx-1"
+            href="https://github.com/LYZhelloworld"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-github"></i>
             View in GitHub
           </a>
         </div>
@@ -22,7 +27,7 @@
 <script lang="ts">
 export default {
   name: "HomePage",
-}
+};
 </script>
 
 <style>

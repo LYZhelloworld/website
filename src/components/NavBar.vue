@@ -1,11 +1,19 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand text-primary" href="https://github.com/LYZhelloworld/lyzhelloworld.github.io"
-        target="_blank" rel="noopener noreferrer">
+      <a
+        class="navbar-brand text-primary"
+        href="https://github.com/LYZhelloworld/lyzhelloworld.github.io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         lyzhelloworld.github.io
       </a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-collapse">
+      <button
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#nav-collapse"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Right aligned nav items -->
@@ -15,8 +23,13 @@
         </ul>
 
         <div>
-          <a class="btn btn-outline-success" href="https://github.com/LYZhelloworld" target="_blank"
-            rel="noopener noreferrer">Follow @LYZhelloworld</a>
+          <a
+            class="btn btn-outline-success"
+            href="https://github.com/LYZhelloworld"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Follow @LYZhelloworld</a
+          >
         </div>
       </div>
     </div>
@@ -25,9 +38,8 @@
 
 <script lang="ts">
 export default {
-  name: "NavBar"
-}
+  name: "NavBar",
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

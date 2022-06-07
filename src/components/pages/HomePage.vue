@@ -2,6 +2,7 @@
   <HomePageWithPuzzle v-if="stage === 0" @next-level="stage++" />
   <LevelOne v-else-if="stage === 1" @next-level="stage++" />
   <LevelTwo v-else-if="stage === 2" @next-level="stage++" />
+  <LevelThree v-else-if="stage === 3" @next-level="stage++" />
 </template>
 
 <script lang="ts">
@@ -9,6 +10,7 @@ import { defineComponent } from "vue";
 import HomePageWithPuzzle from "./puzzles/HomePageWithPuzzle.vue";
 import LevelOne from "./puzzles/LevelOne.vue";
 import LevelTwo from "./puzzles/LevelTwo.vue";
+import LevelThree from "./puzzles/LevelThree.vue";
 
 export default defineComponent({
   data() {
@@ -20,6 +22,7 @@ export default defineComponent({
     HomePageWithPuzzle,
     LevelOne,
     LevelTwo,
+    LevelThree,
   },
 });
 </script>

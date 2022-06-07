@@ -25,9 +25,9 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "HomePage",
-};
+import { defineComponent } from "vue";
+
+export default defineComponent({});
 </script>
 
 <style>

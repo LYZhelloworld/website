@@ -37,9 +37,7 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "NavBar",
-};
-</script>
+import { defineComponent } from "vue";
 
-<style scoped></style>
+export default defineComponent({});
+</script>

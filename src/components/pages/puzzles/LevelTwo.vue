@@ -3,7 +3,11 @@
     <div class="container text-white text-center mb-5">
       <div class="row">
         <div class="col">
-          <img src="@/assets/avatar.png" class="avatar fadein" alt="avatar" />
+          <img
+            src="@/assets/avatar.png"
+            class="avatar fadein"
+            :alt="secretString"
+          />
         </div>
       </div>
       <div class="row mt-4">
@@ -19,7 +23,6 @@
             View in GitHub
           </a>
           <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
-          <p class="text-primary">{{ secretString }}</p>
         </div>
       </div>
     </div>
@@ -32,7 +35,7 @@ import { generateSecret } from "@/utils/secret";
 
 export default defineComponent({
   created() {
-    document.title = "I";
+    document.title = "II";
   },
   data() {
     return {
@@ -42,7 +45,8 @@ export default defineComponent({
   methods: {
     secret() {
       let ans = prompt(
-        "Steganography is the practice of concealing a message within another message or a physical object."
+        "The alt attribute holds a text description of the image, which isn't mandatory but is incredibly useful for accessibility.\n" +
+          "Screen readers read this description out to their users so they know what the image means."
       );
       if (ans === this.secretString) {
         this.nextLevel();

@@ -36,6 +36,9 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  created() {
+    document.title = "Hello, world.";
+  },
   data() {
     return {
       secretCounter: 0,

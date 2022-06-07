@@ -3,7 +3,12 @@
     <div class="container text-white text-center mb-5">
       <div class="row">
         <div class="col">
-          <img src="@/assets/avatar.png" class="avatar fadein" alt="avatar" />
+          <img
+            src="@/assets/avatar.png"
+            class="avatar fadein"
+            alt="avatar"
+            @click="clickImage"
+          />
         </div>
       </div>
       <div class="row mt-4">
@@ -18,8 +23,9 @@
             <i class="fa-brands fa-github"></i>
             View in GitHub
           </a>
-          <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
-          <p class="text-primary">{{ secretString }}</p>
+          <a class="btn btn-secondary mx-1" v-if="showSecret" @click="secret"
+            >Admin Portal</a
+          >
         </div>
       </div>
     </div>
@@ -28,32 +34,51 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { generateSecret } from "@/utils/secret";
 
 export default defineComponent({
   created() {
-    document.title = "I";
+    document.title = "Hello, world.";
   },
   data() {
     return {
-      secretString: generateSecret(),
+      secretCounter: 0,
+      showSecret: false,
     };
   },
   methods: {
+    clickImage() {
+      if (this.showSecret) return;
+
+      const clicksRequired = 6;
+      this.secretCounter++;
+      if (this.secretCounter >= 3 && this.secretCounter < clicksRequired) {
+        (this.$refs.message as HTMLParagraphElement).innerText = `You are now ${
+          clicksRequired - this.secretCounter
+        } clicks away from being a developer.`;
+      } else if (this.secretCounter === clicksRequired) {
+        (this.$refs.message as HTMLParagraphElement).innerText =
+          "Hello, world.";
+        this.showSecret = true;
+      }
+    },
     secret() {
-      let ans = prompt(
-        "Steganography is the practice of concealing a message within another message or a physical object.\n--Wikipedia"
-      );
-      if (ans === this.secretString) {
+      const answer = "123456";
+      let ans = prompt("Please enter the password.");
+      if (ans === answer) {
+        this.nextLevel();
+        return;
+      }
+      ans = prompt("Please enter the password.\nThe most common one.");
+      if (ans === answer) {
         this.nextLevel();
         return;
       }
     },
     nextLevel() {
-      this.$emit("next-level");
+      this.$emit("nextLevel");
     },
   },
-  emits: ["next-level"],
+  emits: ["nextLevel"],
 });
 </script>
 

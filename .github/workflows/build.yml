@@ -17,7 +17,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'No tests.'
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        run: npm ci
+      - name: Test
+        run: npm run test:unit
   lint:
     runs-on: ubuntu-latest
     steps:

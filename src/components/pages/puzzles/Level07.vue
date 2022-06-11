@@ -3,11 +3,7 @@
     <div class="container text-white text-center mb-5">
       <div class="row">
         <div class="col">
-          <img
-            src="@/assets/avatar.png"
-            class="avatar fadein"
-            :alt="secretString"
-          />
+          <img src="@/assets/avatar.png" class="avatar fadein" />
         </div>
       </div>
       <div class="row mt-4">
@@ -23,6 +19,7 @@
             View in GitHub
           </a>
           <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
+          <p>{{ cipherText }}</p>
         </div>
       </div>
     </div>
@@ -30,25 +27,29 @@
 </template>
 
 <script lang="ts">
+import { convertToMorseCode } from "@/utils/morse";
 import { defineComponent } from "vue";
-import { generateSecret } from "@/utils/secret";
 
 export default defineComponent({
+  name: "LevelSeven",
   created() {
-    document.title = "II";
+    document.title = "VII - 0";
   },
   data() {
     return {
-      secretString: generateSecret(),
+      secretString: "HELLOWORLD",
     };
+  },
+  computed: {
+    cipherText() {
+      const message = "CQ CQ CQ\nDE HELLOWORLD\nK";
+      return convertToMorseCode(message);
+    },
   },
   methods: {
     secret() {
-      let ans = prompt(
-        "The alt attribute holds a text description of the image, which isn't mandatory but is incredibly useful for accessibility.\n" +
-          "Screen readers read this description out to their users so they know what the image means."
-      );
-      if (ans === this.secretString) {
+      let ans = prompt(convertToMorseCode("QRZ?"));
+      if (ans?.toUpperCase() === this.secretString) {
         this.nextLevel();
         return;
       }

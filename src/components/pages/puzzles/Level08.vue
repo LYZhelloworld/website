@@ -3,11 +3,7 @@
     <div class="container text-white text-center mb-5">
       <div class="row">
         <div class="col">
-          <img
-            src="@/assets/avatar.png"
-            class="avatar fadein"
-            :alt="secretString"
-          />
+          <img src="@/assets/avatar.png" class="avatar fadein" />
         </div>
       </div>
       <div class="row mt-4">
@@ -23,7 +19,8 @@
             View in GitHub
           </a>
           <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
-          <p>{{ cipherText }}</p>
+          <p>PRE {{ preOrder }}</p>
+          <p>IN {{ inOrder }}</p>
         </div>
       </div>
     </div>
@@ -31,27 +28,38 @@
 </template>
 
 <script lang="ts">
+import { Tree } from "@/utils/tree";
 import { defineComponent } from "vue";
-import { shifting, getRandomNumberInRange } from "@/utils/secret";
 
 export default defineComponent({
+  name: "LevelEight",
   created() {
-    document.title = "III";
+    document.title = "VIII - 9";
   },
   data() {
     return {
-      secretString: "lorem ipsum dolor sit amet",
+      tree: new Tree([
+        "A",
+        ["B", ["C", null, null], ["D", null, null]],
+        ["E", ["F", ["G", null, null], ["H", null, null]], ["I", null, null]],
+      ]),
     };
   },
   computed: {
-    cipherText() {
-      return shifting(this.secretString, getRandomNumberInRange(1, 26));
+    preOrder() {
+      return this.tree.preOrder().join("");
+    },
+    inOrder() {
+      return this.tree.inOrder().join("");
+    },
+    postOrder() {
+      return this.tree.postOrder().join("");
     },
   },
   methods: {
     secret() {
-      let ans = prompt("Please input the password.");
-      if (ans === this.secretString) {
+      let ans = prompt("POST");
+      if (ans?.toUpperCase() === this.postOrder) {
         this.nextLevel();
         return;
       }

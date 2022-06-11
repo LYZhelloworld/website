@@ -26,4 +26,9 @@ describe("shifting", () => {
     const cipherText = shifting(plainText, 5);
     expect(cipherText).toBe("fghijklmnopqrstuvwxyzabcde");
   });
+  it("should change alphabets only", () => {
+    const plainText = "abcdefghijklmnopqrstuvwxyz ";
+    const cipherText = shifting(plainText, 5);
+    expect(cipherText).toBe("fghijklmnopqrstuvwxyzabcde ");
+  })
 });

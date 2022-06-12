@@ -1,4 +1,5 @@
 # website
+![Build workflow status](https://github.com/LYZhelloworld/website/actions/workflows/build.yml/badge.svg)
 
 ## Project setup
 ```

@@ -1,6 +1,6 @@
 <template>
   <MyAvatar @click="imageClick" :alt="imageAlt" />
-  <p class="display-4"><strong>Helloworld</strong></p>
+  <p class="display-4"><strong>Hello, world.</strong></p>
   <p class="lead">0 error(s), 0 warning(s).</p>
   <p v-if="message" class="text-muted">{{ message }}</p>
 

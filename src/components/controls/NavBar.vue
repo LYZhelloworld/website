@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
       <a
-        class="navbar-brand text-primary"
+        class="navbar-brand"
         href="https://github.com/LYZhelloworld/lyzhelloworld.github.io"
         target="_blank"
         rel="noopener noreferrer"
@@ -19,7 +19,14 @@
       <!-- Right aligned nav items -->
       <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item" v-for="(item, index) in items" :key="index">
+            <a
+              :class="{ 'nav-link': true, active: selected === index }"
+              href="#"
+              @click="click(index)"
+              >{{ item }}</a
+            >
+          </li>
         </ul>
 
         <div>
@@ -37,7 +44,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 
-export default defineComponent({});
+export default defineComponent({
+  props: {
+    items: {
+      type: Array as PropType<string[]>,
+      required: true,
+    },
+    selected: {
+      type: Number,
+      default: 0,
+    },
+  },
+  methods: {
+    click(index: number) {
+      this.$emit("click", index);
+    },
+  },
+  emits: ["click"],
+});
 </script>

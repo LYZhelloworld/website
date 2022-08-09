@@ -1,17 +1,19 @@
 <template>
   <div class="main align-items-center justify-content-center mb-auto">
-    <HomePageWithPuzzle v-if="stage === 0" @next-level="stage++" />
-    <LevelOne v-else-if="stage === 1" @next-level="stage++" />
-    <LevelTwo v-else-if="stage === 2" @next-level="stage++" />
-    <LevelThree v-else-if="stage === 3" @next-level="stage++" />
-    <LevelFour v-else-if="stage === 4" @next-level="stage++" />
-    <LevelFive v-else-if="stage === 5" @next-level="stage++" />
-    <LevelSix v-else-if="stage === 6" @next-level="stage++" />
-    <LevelSeven v-else-if="stage === 7" @next-level="stage++" />
-    <LevelEight v-else-if="stage === 8" @next-level="stage++" />
-    <LevelNine v-else-if="stage === 9" @next-level="stage++" />
-    <LevelTen v-else-if="stage === 10" @next-level="stage++" />
-    <EndOfGame v-else @restart="stage = 0" />
+    <div class="container text-center mb-5">
+      <HomePageWithPuzzle v-if="stage === 0" @next-level="stage++" />
+      <LevelOne v-else-if="stage === 1" @next-level="stage++" />
+      <LevelTwo v-else-if="stage === 2" @next-level="stage++" />
+      <LevelThree v-else-if="stage === 3" @next-level="stage++" />
+      <LevelFour v-else-if="stage === 4" @next-level="stage++" />
+      <LevelFive v-else-if="stage === 5" @next-level="stage++" />
+      <LevelSix v-else-if="stage === 6" @next-level="stage++" />
+      <LevelSeven v-else-if="stage === 7" @next-level="stage++" />
+      <LevelEight v-else-if="stage === 8" @next-level="stage++" />
+      <LevelNine v-else-if="stage === 9" @next-level="stage++" />
+      <LevelTen v-else-if="stage === 10" @next-level="stage++" />
+      <EndOfGame v-else @restart="stage = 0" />
+    </div>
   </div>
 </template>
 
@@ -58,7 +60,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: rgb(var(--bs-primary-rgb)) !important;
 }
 
 #app {
@@ -69,52 +70,5 @@ body {
 
 nav {
   margin-bottom: auto;
-}
-
-.avatar {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 50%;
-  border: 5px solid #fff;
-}
-
-img.fadein {
-  animation-name: fadein;
-  animation-duration: 1s;
-  -webkit-animation-name: fadein;
-  -webkit-animation-duration: 1s;
-  -moz-animation-name: fadein;
-  -moz-animation-duration: 1s;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 </style>

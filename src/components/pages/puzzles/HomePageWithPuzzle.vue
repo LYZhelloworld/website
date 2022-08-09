@@ -1,5 +1,5 @@
 <template>
-  <HomePageContent @image-click="clickImage" />
+  <HomePageContent @image-click="clickImage" :message="message" />
   <a class="btn btn-secondary mx-1" v-if="showSecret" @click="secret"
     >Admin Portal</a
   >
@@ -20,6 +20,7 @@ export default defineComponent({
     return {
       secretCounter: 0,
       showSecret: false,
+      message: "",
     };
   },
   methods: {
@@ -29,12 +30,11 @@ export default defineComponent({
       const clicksRequired = 6;
       this.secretCounter++;
       if (this.secretCounter >= 3 && this.secretCounter < clicksRequired) {
-        (this.$refs.message as HTMLParagraphElement).innerText = `You are now ${
-          clicksRequired - this.secretCounter
-        } clicks away from being a developer.`;
+        this.message = `You are now ${clicksRequired - this.secretCounter} ${
+          clicksRequired - this.secretCounter > 1 ? "clicks" : "click"
+        } away from being a developer.`;
       } else if (this.secretCounter === clicksRequired) {
-        (this.$refs.message as HTMLParagraphElement).innerText =
-          "Hello, world.";
+        this.message = "Hello, world.";
         this.showSecret = true;
       }
     },

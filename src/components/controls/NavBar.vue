@@ -7,7 +7,6 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fa-brands fa-github"></i>
         lyzhelloworld.github.io
       </a>
       <button

@@ -1,29 +1,15 @@
 <template>
-  <div class="container text-white text-center mb-5">
-    <div class="row">
-      <div class="col">
-        <img
-          src="@/assets/avatar.png"
-          class="avatar fadein"
-          alt="avatar"
-          @click="clickImage"
-        />
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col">
-        <p class="mb-4 display-4" ref="message">Hello, world.</p>
-        <ButtonViewInGithub />
-        <a class="btn btn-secondary mx-1" v-if="showSecret" @click="secret"
-          >Admin Portal</a
-        >
-      </div>
-    </div>
-  </div>
+  <MyAvatar @click="clickImage" />
+  <p class="my-4 display-4" ref="message">Hello, world.</p>
+  <ButtonViewInGithub />
+  <a class="btn btn-secondary mx-1" v-if="showSecret" @click="secret"
+    >Admin Portal</a
+  >
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import MyAvatar from "@/components/controls/MyAvatar.vue";
 import ButtonViewInGithub from "@/components/controls/ButtonViewInGithub.vue";
 
 export default defineComponent({
@@ -31,6 +17,7 @@ export default defineComponent({
     document.title = "Hello, world.";
   },
   components: {
+    MyAvatar,
     ButtonViewInGithub,
   },
   data() {

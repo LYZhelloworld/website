@@ -1,35 +1,23 @@
 <template>
-  <div class="container text-white text-center mb-5">
-    <div class="row">
-      <div class="col">
-        <img src="@/assets/avatar.png" class="avatar fadein" />
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col">
-        <p class="mb-4 display-4" ref="message">Hello, world.</p>
-        <a
-          class="btn btn-success mx-1"
-          href="https://github.com/LYZhelloworld"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-github"></i>
-          View in GitHub
-        </a>
-        <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
-        <p v-html="cipherText"></p>
-      </div>
-    </div>
-  </div>
+  <MyAvatar />
+  <p class="mb-4 display-4" ref="message">Hello, world.</p>
+  <ButtonViewInGithub />
+  <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
+  <p v-html="cipherText"></p>
 </template>
 
 <script lang="ts">
 import { charToBin, convertToQuadrants } from "@/utils/bin";
 import { defineComponent } from "vue";
+import MyAvatar from "@/components/controls/MyAvatar.vue";
+import ButtonViewInGithub from "@/components/controls/ButtonViewInGithub.vue";
 
 export default defineComponent({
   name: "LevelFive",
+  components: {
+    MyAvatar,
+    ButtonViewInGithub,
+  },
   created() {
     document.title = "V - 5";
   },

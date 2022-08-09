@@ -1,21 +1,17 @@
 <template>
-  <MyAvatar :alt="secretString" />
-  <p class="mb-4 display-4" ref="message">Hello, world.</p>
-  <ButtonViewInGithub />
+  <HomePageContent :image-alt="secretString" />
   <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import MyAvatar from "@/components/controls/MyAvatar.vue";
-import ButtonViewInGithub from "@/components/controls/ButtonViewInGithub.vue";
 import { generateSecret } from "@/utils/secret";
+import HomePageContent from "@/components/controls/HomePageContent.vue";
 
 export default defineComponent({
   name: "LevelTwo",
   components: {
-    MyAvatar,
-    ButtonViewInGithub,
+    HomePageContent,
   },
   created() {
     document.title = "II - 4";

@@ -1,22 +1,18 @@
 <template>
-  <MyAvatar />
-  <p class="mb-4 display-4" ref="message">Hello, world.</p>
-  <ButtonViewInGithub />
+  <HomePageContent />
   <a class="btn btn-secondary mx-1" @click="secret">Next Level</a>
   <p v-html="cipherText"></p>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import MyAvatar from "@/components/controls/MyAvatar.vue";
-import ButtonViewInGithub from "@/components/controls/ButtonViewInGithub.vue";
 import { charToBin, convertToQuadrants } from "@/utils/bin";
+import HomePageContent from "@/components/controls/HomePageContent.vue";
 
 export default defineComponent({
   name: "LevelSix",
   components: {
-    MyAvatar,
-    ButtonViewInGithub,
+    HomePageContent,
   },
   created() {
     document.title = "VI - 7";

@@ -1,7 +1,5 @@
 <template>
-  <MyAvatar @click="clickImage" />
-  <p class="my-4 display-4" ref="message">Hello, world.</p>
-  <ButtonViewInGithub />
+  <HomePageContent @image-click="clickImage" />
   <a class="btn btn-secondary mx-1" v-if="showSecret" @click="secret"
     >Admin Portal</a
   >
@@ -9,16 +7,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import MyAvatar from "@/components/controls/MyAvatar.vue";
-import ButtonViewInGithub from "@/components/controls/ButtonViewInGithub.vue";
+import HomePageContent from "@/components/controls/HomePageContent.vue";
 
 export default defineComponent({
   created() {
     document.title = "Hello, world.";
   },
   components: {
-    MyAvatar,
-    ButtonViewInGithub,
+    HomePageContent,
   },
   data() {
     return {

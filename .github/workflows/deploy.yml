@@ -1,8 +1,8 @@
 # Deploy website to GitHub pages
 
 on:
-  push:
-    branches: [master]
+  release:
+    types: [ published ]
 
 jobs:
   deploy:
@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: "Echo current version number"
+        run: echo "Current version is ${{ github.event.release.tag_name }}"
       - name: Install
         run: npm ci
       - name: Build
@@ -22,6 +24,7 @@ jobs:
           repository-name: LYZhelloworld/lyzhelloworld.github.io
           git-config-name: github-actions[bot]
           git-config-email: github-actions[bot]@users.noreply.github.com
+          commit-message: Deploying website ${{ github.event.release.tag_name }}"
           clean-exclude: |
             README.md
           ssh-key: ${{ secrets.DEPLOY_KEY }}

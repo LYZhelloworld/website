@@ -1,24 +1,38 @@
 <template>
-  <NavBar :items="navBarItems" :selected="0" />
-  <HomePage />
+  <div class="container">
+    <ConsoleBox style="flex: 1" />
+    <ConsoleInput />
+  </div>
 </template>
 
-<script lang="ts">
-import NavBar from "./components/controls/NavBar.vue";
-import HomePage from "./components/pages/HomePage.vue";
-import { defineComponent } from "vue";
+<style>
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+</style>
 
-const NAVBAR_ITEMS = ["Home"];
+<style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+</style>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import ConsoleBox from "./components/controls/ConsoleBox.vue";
+import ConsoleInput from "./components/controls/ConsoleInput.vue";
 
 export default defineComponent({
   components: {
-    NavBar,
-    HomePage,
-  },
-  data() {
-    return {
-      navBarItems: NAVBAR_ITEMS,
-    };
+    ConsoleBox,
+    ConsoleInput,
   },
 });
 </script>

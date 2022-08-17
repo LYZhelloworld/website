@@ -1,5 +1,5 @@
 # website
-![Build workflow status](https://github.com/LYZhelloworld/website/actions/workflows/build.yml/badge.svg)
+[![.github/workflows/deploy.yml](https://github.com/LYZhelloworld/website/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/LYZhelloworld/website/actions/workflows/deploy.yml)
 
 ## Project setup
 ```

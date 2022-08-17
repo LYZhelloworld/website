@@ -1,7 +1,7 @@
 <template>
   <div>
     <span>&gt;&nbsp;</span>
-    <input class="console-input" />
+    <input ref="input" class="console-input" @keydown="onkeydown" />
   </div>
 </template>
 
@@ -32,5 +32,24 @@ div {
 <script lang="ts">
 import { defineComponent } from "vue";
 
-export default defineComponent({});
+export default defineComponent({
+  name: "ConsoleInput",
+  mounted() {
+    this.focus();
+  },
+  methods: {
+    focus() {
+      (this.$refs.input as HTMLInputElement).focus();
+    },
+    onkeydown(e: KeyboardEvent) {
+      if (e.key === "Enter") {
+        let inputElement = this.$refs.input as HTMLInputElement;
+        let command = inputElement.value;
+        inputElement.value = "";
+        this.$emit("exec", command);
+      }
+    },
+  },
+  emits: ["exec"],
+});
 </script>

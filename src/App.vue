@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <ConsoleBox style="flex: 1" />
-    <ConsoleInput />
+    <ConsoleBox ref="consoleBox" style="flex: 1" />
+    <ConsoleInput @exec="onexec" />
   </div>
 </template>
 
@@ -33,6 +33,13 @@ export default defineComponent({
   components: {
     ConsoleBox,
     ConsoleInput,
+  },
+  methods: {
+    onexec(command: string) {
+      let consoleBox = this.$refs.consoleBox as typeof ConsoleBox;
+      consoleBox.writeLine(command);
+      console.log(command, consoleBox);
+    },
   },
 });
 </script>

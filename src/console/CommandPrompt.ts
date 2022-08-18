@@ -1,3 +1,4 @@
+import { parseArguments } from "@/utils/argument";
 import { sleep } from "@/utils/sleep";
 
 /**
@@ -40,9 +41,23 @@ export default class CommandPrompt {
   async startAsync(): Promise<never> {
     this.outputProc();
 
+    // Welcome message.
+    this.write(this.welcome());
+
     for (;;) {
       const command = await this.getInput();
-      this.writeOutput(command + "\n");
+
+      // Echo.
+      this.writeLine(`> ${command}`);
+
+      try {
+        const args = parseArguments(command);
+        this.call(args);
+      } catch (e) {
+        if (e instanceof Error) {
+          this.writeLine(`Error: ${e.message}`);
+        }
+      }
     }
   }
 
@@ -52,6 +67,45 @@ export default class CommandPrompt {
    */
   input(data: string) {
     this.inputBuffer.push(data);
+  }
+
+  /**
+   * Writes output to the output buffer.
+   * @param data The output data.
+   */
+  write(data: string): void {
+    this.outputBuffer += data;
+  }
+
+  /**
+   * Writes output and a newline.
+   * @param data The output data.
+   */
+  writeLine(data: string): void {
+    this.write(data);
+    this.write("\n");
+  }
+
+  /**
+   * The welcome message.
+   * @returns The welcome message.
+   */
+  private welcome(): string {
+    return (
+      "Helloworld (c) Command Prompt\n" +
+      `Current time: ${new Date().toLocaleString()}\n` +
+      "\n" +
+      'Type "help" to get help.\n'
+    );
+  }
+
+  /**
+   * Calls commands.
+   * @param args The arguments. The first argument `arg[0]` will be the name of the command.
+   */
+  private call(args: string[]): void {
+    // TODO
+    this.writeLine(args.join(" "));
   }
 
   /**
@@ -68,14 +122,6 @@ export default class CommandPrompt {
         return input;
       }
     }
-  }
-
-  /**
-   * Writes output to the output buffer.
-   * @param data The output data.
-   */
-  private writeOutput(data: string): void {
-    this.outputBuffer += data;
   }
 
   /**

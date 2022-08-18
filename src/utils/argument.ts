@@ -1,9 +1,9 @@
 /**
  * Parses arguments into string array.
- * 
+ *
  * The leading/trailing spaces will be ignored.
  * Multiple spaces between arguments will be treated as one space.
- * 
+ *
  * The backslash `\` will escape the following character:
  * - ` `: a single space (not considered as an argument separator).
  * - `\`: a backslash (`\`).
@@ -12,10 +12,10 @@
  * - `t`: a tab.
  * - `"`: a double quote (`"`).
  * - other: the character as it is.
- * 
+ *
  * When a text is quoted with double quotes `""`, the spaces will be preserved.
  * Do note that the backslash escaping is still available in double quotes.
- * 
+ *
  * @param {string} command The command to parse.
  * @returns A string array with parsed arguments.
  * @throws when a backslash is not followed by a character, or a quote is not closed.

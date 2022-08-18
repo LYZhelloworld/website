@@ -20,17 +20,30 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-// The duration between displaying characters in milliseconds.
+/**
+ * The duration between displaying characters in milliseconds.
+ */
 const DISPLAY_DELAY = 10;
 
+/**
+ * The component for displaying output of the console.
+ * @constructor
+ */
 export default defineComponent({
   name: "ConsoleBox",
   data() {
     return {
+      /**
+       * The content to display.
+       */
       content: "",
     };
   },
   methods: {
+    /**
+     * Writes data to the console output.
+     * @param {string} data The data to output.
+     */
     async write(data: string) {
       let arr = Array.from(data);
       console.log("display", arr);
@@ -40,9 +53,9 @@ export default defineComponent({
         await new Promise((resolve) => setTimeout(resolve, DISPLAY_DELAY));
       }
     },
-    async writeLine(data: string) {
-      await this.write(data + "\n");
-    },
+    /**
+     * Scrolls the output box to bottom.
+     */
     scrollToBottom() {
       let consoleBox = this.$refs.consoleBox as HTMLDivElement;
       consoleBox.scrollTop = consoleBox.scrollHeight;

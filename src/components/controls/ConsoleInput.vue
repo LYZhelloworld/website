@@ -32,15 +32,29 @@ div {
 <script lang="ts">
 import { defineComponent } from "vue";
 
+/**
+ * The component for user input to the console.
+ * @constructor
+ */
 export default defineComponent({
   name: "ConsoleInput",
   mounted() {
     this.focus();
   },
   methods: {
+    /**
+     * Focuses the input box.
+     */
     focus() {
       (this.$refs.input as HTMLInputElement).focus();
     },
+    /**
+     * The event handler of `keydown` event of the input box.
+     *
+     * It will emits `exec` event with the command if Enter key is pressed.
+     *
+     * @param {KeyboardEvent} e The event arguments.
+     */
     onkeydown(e: KeyboardEvent) {
       if (e.key === "Enter") {
         let inputElement = this.$refs.input as HTMLInputElement;

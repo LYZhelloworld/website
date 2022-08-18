@@ -53,12 +53,8 @@
 </style>
 
 <script lang="ts">
+import CommandPrompt from "@/console/CommandPrompt";
 import { defineComponent } from "vue";
-
-/**
- * The duration between displaying characters in milliseconds.
- */
-const DISPLAY_DELAY = 10;
 
 /**
  * The component of a console.
@@ -67,6 +63,7 @@ const DISPLAY_DELAY = 10;
 export default defineComponent({
   mounted() {
     this.focus();
+    this.commandPrompt.startAsync();
   },
   data() {
     return {
@@ -74,6 +71,11 @@ export default defineComponent({
        * The content to display.
        */
       content: "",
+
+      /**
+       * The command prompt.
+       */
+      commandPrompt: new CommandPrompt((data) => this.write(data)),
     };
   },
   methods: {
@@ -87,14 +89,9 @@ export default defineComponent({
      * Writes data to the console output.
      * @param {string} data The data to output.
      */
-    async write(data: string) {
-      let arr = Array.from(data);
-      console.log("display", arr);
-      for (let i in arr) {
-        this.content += arr[i];
-        this.scrollToBottom();
-        await new Promise((resolve) => setTimeout(resolve, DISPLAY_DELAY));
-      }
+    write(data: string) {
+      this.content += data;
+      this.scrollToBottom();
     },
     /**
      * Scrolls the output box to bottom.
@@ -115,7 +112,7 @@ export default defineComponent({
         const inputElement = this.$refs.input as HTMLInputElement;
         const command = inputElement.value;
         inputElement.value = "";
-        this.write(command + "\n");
+        this.commandPrompt.input(command);
       }
     },
   },

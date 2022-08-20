@@ -20,13 +20,27 @@ export interface CommandConstructor {
 }
 
 /**
- * The interface of a command.
+ * The base class of a command.
  */
-export interface Command {
+export default abstract class Command {
+  /**
+   * The IO interface.
+   */
+  protected io: CommandIO;
+
   /**
    * Calls the command with arguments.
    * @param {string[]} args The arguments, separated with spaces.
    * @param {CommandLineOptions} options The command line options.
    */
-  call(args: string[], options: CommandLineOptions): void;
+  abstract call(args: string[], options: CommandLineOptions): void;
+
+  /**
+   * The constructor.
+   * @param {CommandIO} io The IO interface.
+   * @constructor
+   */
+  constructor(io: CommandIO) {
+    this.io = io;
+  }
 }

@@ -1,4 +1,4 @@
-import { Command } from "../Command";
+import Command from "../Command";
 import CommandHelp from "../CommandHelp";
 import { CommandIO } from "../CommandIO";
 import { registeredCommands } from "../RegisteredCommands";
@@ -6,7 +6,7 @@ import { registeredCommands } from "../RegisteredCommands";
 /**
  * The `help` command.
  */
-export default class HelpCommand implements Command {
+export default class HelpCommand extends Command {
   /**
    * The help content.
    */
@@ -23,17 +23,12 @@ export default class HelpCommand implements Command {
   };
 
   /**
-   * The IO interface.
-   */
-  private io: CommandIO;
-
-  /**
    * The constructor.
    * @param {CommandIO} io The IO interface.
    * @constructor
    */
   constructor(io: CommandIO) {
-    this.io = io;
+    super(io);
   }
 
   /** @inheritdoc */

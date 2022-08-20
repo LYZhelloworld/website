@@ -1,24 +1,29 @@
 <template>
-  <NavBar :items="navBarItems" :selected="0" />
-  <HomePage />
+  <ConsoleBox />
 </template>
 
+<style>
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+</style>
+
 <script lang="ts">
-import NavBar from "./components/controls/NavBar.vue";
-import HomePage from "./components/pages/HomePage.vue";
 import { defineComponent } from "vue";
+import ConsoleBox from "@/components/ConsoleBox.vue";
 
-const NAVBAR_ITEMS = ["Home"];
-
+/**
+ * The application.
+ * @constructor
+ */
 export default defineComponent({
   components: {
-    NavBar,
-    HomePage,
-  },
-  data() {
-    return {
-      navBarItems: NAVBAR_ITEMS,
-    };
+    ConsoleBox,
   },
 });
 </script>

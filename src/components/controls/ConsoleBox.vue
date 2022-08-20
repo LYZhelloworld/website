@@ -98,7 +98,9 @@ export default defineComponent({
      */
     scrollToBottom() {
       const consoleBox = this.$refs.consoleBox as HTMLDivElement;
-      consoleBox.scrollTop = consoleBox.scrollHeight;
+      if (consoleBox !== null) {
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+      }
     },
     /**
      * The event handler of `keydown` event of the input box.

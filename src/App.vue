@@ -15,7 +15,7 @@ body,
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ConsoleBox from "@/components/controls/ConsoleBox.vue";
+import ConsoleBox from "@/components/ConsoleBox.vue";
 
 /**
  * The application.

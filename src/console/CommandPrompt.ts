@@ -1,5 +1,7 @@
 import { parseArguments } from "@/utils/argument";
 import { sleep } from "@/utils/sleep";
+import { CommandIO } from "./CommandIO";
+import { registeredCommands } from "./RegisteredCommands";
 
 /**
  * The duration between displaying characters in milliseconds.
@@ -9,7 +11,7 @@ const OUTPUT_INTERVAL = 10;
 /**
  * The command prompt.
  */
-export default class CommandPrompt {
+export default class CommandPrompt extends CommandIO {
   /**
    * The function to output data.
    */
@@ -32,6 +34,7 @@ export default class CommandPrompt {
    * @constructor
    */
   constructor(outputFunc: (data: string) => void) {
+    super();
     this.outputFunc = outputFunc;
   }
 
@@ -45,14 +48,16 @@ export default class CommandPrompt {
     this.write(this.welcome());
 
     for (;;) {
-      const command = await this.getInput();
+      const command = await this.readLineAsync();
 
       // Echo.
       this.writeLine(`> ${command}`);
 
       try {
         const args = parseArguments(command);
-        this.call(args);
+        if (args.length > 0) {
+          this.call(args, command);
+        }
       } catch (e) {
         if (e instanceof Error) {
           this.writeLine(`Error: ${e.message}`);
@@ -69,21 +74,22 @@ export default class CommandPrompt {
     this.inputBuffer.push(data);
   }
 
-  /**
-   * Writes output to the output buffer.
-   * @param data The output data.
-   */
-  write(data: string): void {
-    this.outputBuffer += data;
+  /** @inheritdoc */
+  async readLineAsync(): Promise<string> {
+    for (;;) {
+      const input = this.inputBuffer.shift();
+      if (input === undefined) {
+        // Wait until it changes.
+        await sleep(1);
+      } else {
+        return input;
+      }
+    }
   }
 
-  /**
-   * Writes output and a newline.
-   * @param data The output data.
-   */
-  writeLine(data: string): void {
-    this.write(data);
-    this.write("\n");
+  /** @inheritdoc */
+  write(data: string): void {
+    this.outputBuffer += data;
   }
 
   /**
@@ -101,26 +107,18 @@ export default class CommandPrompt {
 
   /**
    * Calls commands.
-   * @param args The arguments. The first argument `arg[0]` will be the name of the command.
+   * @param {string[]} args The arguments. The first argument `arg[0]` will be the name of the command.
+   * @param {string} rawCommand The unparsed raw command line.
    */
-  private call(args: string[]): void {
-    // TODO
-    this.writeLine(args.join(" "));
-  }
+  private call(args: string[], rawCommand: string): void {
+    const cmd = args[0];
 
-  /**
-   * Gets a line of input from the input buffer.
-   * Waits for the input when the buffer is empty.
-   */
-  private async getInput(): Promise<string> {
-    for (;;) {
-      const input = this.inputBuffer.shift();
-      if (input === undefined) {
-        // Wait until it changes.
-        await sleep(1);
-      } else {
-        return input;
-      }
+    if (cmd in registeredCommands) {
+      new registeredCommands[cmd](this).call(args, {
+        rawCommand,
+      });
+    } else {
+      this.writeLine(`The command "${cmd}" is not found.`);
     }
   }
 

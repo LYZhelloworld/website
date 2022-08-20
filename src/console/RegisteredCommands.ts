@@ -1,6 +1,8 @@
 import { CommandConstructor } from "./Command";
 import EchoCommand from "./commands/echo";
+import GitHubCommand from "./commands/github";
 import HelpCommand from "./commands/help";
+import NowCommand from "./commands/now";
 
 /**
  * The commands used in this application.
@@ -10,5 +12,7 @@ import HelpCommand from "./commands/help";
  */
 export const registeredCommands: { [key: string]: CommandConstructor } = {
   echo: EchoCommand,
+  github: GitHubCommand,
   help: HelpCommand,
+  now: NowCommand,
 };

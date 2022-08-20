@@ -36,20 +36,33 @@ export default class HelpCommand extends Command {
     if (args.length > 1) {
       const helpCommand = args[1];
       if (helpCommand in registeredCommands) {
-        const help = registeredCommands[helpCommand].help;
-        this.io.writeLine(`Description\n  ${help.description}`);
-        this.io.writeLine(`\nUsages`);
-        help.usages.forEach((usage) => this.io.writeLine(`  ${usage}`));
-        this.io.writeLine(`\nParameters`);
-        help.params.forEach((param) =>
-          this.io.writeLine(`  ${param.name}\t${param.description}`)
-        );
+        this.showHelp(registeredCommands[helpCommand].help);
       } else {
         this.io.writeLine(`The command "${helpCommand}" is not found.`);
         this.showHelpOfAllCommands();
       }
     } else {
       this.showHelpOfAllCommands();
+    }
+  }
+
+  /**
+   * Shows help of a command.
+   * @param {CommandHelp} help: the help content of the command.
+   */
+  private showHelp(help: CommandHelp): void {
+    this.io.writeLine(`Description\n  ${help.description}`);
+
+    if (help.usages.length > 0) {
+      this.io.writeLine(`\nUsages`);
+      help.usages.forEach((usage) => this.io.writeLine(`  ${usage}`));
+    }
+
+    if (help.params.length > 0) {
+      this.io.writeLine(`\nParameters`);
+      help.params.forEach((param) =>
+        this.io.writeLine(`  ${param.name}\t${param.description}`)
+      );
     }
   }
 

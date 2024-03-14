@@ -15,12 +15,12 @@ jobs:
       - name: Install
         run: npm ci
       - name: Build
-        run: npm run build
+        run: npm run docs:build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: master # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          folder: .vitepress/dist # The folder the action should deploy.
           repository-name: LYZhelloworld/lyzhelloworld.github.io
           git-config-name: github-actions[bot]
           git-config-email: github-actions[bot]@users.noreply.github.com

@@ -1,39 +1,29 @@
 {
   "name": "website",
-  "version": "3.1.0",
-  "private": true,
+  "version": "4.0.0",
+  "description": "Source code of lyzhelloworld.github.io",
+  "main": "index.js",
   "scripts": {
-    "serve": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
-    "test:unit": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service test:unit",
-    "lint": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service lint"
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
-  "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13",
-    "vue-class-component": "^8.0.0-0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LYZhelloworld/Website.git"
   },
+  "keywords": [
+    "vitepress",
+    "vue",
+    "javascript"
+  ],
+  "author": "Helloworld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LYZhelloworld/Website/issues"
+  },
+  "homepage": "https://github.com/LYZhelloworld/Website#readme",
   "devDependencies": {
-    "@types/jest": "^27.5.2",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-plugin-unit-jest": "~5.0.0",
-    "@vue/cli-service": "^5.0.8",
-    "@vue/eslint-config-typescript": "^9.1.0",
-    "@vue/test-utils": "^2.0.0-0",
-    "@vue/vue3-jest": "^27.0.0-alpha.1",
-    "babel-jest": "^27.0.6",
-    "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "jest": "^27.5.1",
-    "prettier": "^2.4.1",
-    "ts-jest": "^27.1.5",
-    "typescript": "~4.5.5"
+    "vitepress": "^1.0.0-rc.45"
   }
 }

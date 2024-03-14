@@ -23,7 +23,7 @@ features:
     link: /introduction/what-is-this-website
   - title: Personal Profile
     details: My personal profile
-    link: /personal-profile/profile
+    link: /profile/personal-profile
   - title: VitePress
     details: VitePress is good. Try it.
     link: https://vitepress.dev/

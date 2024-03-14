@@ -20,10 +20,10 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Personal Profile',
+        text: 'Profile',
         items: [
-          { text: 'Profile', link: '/personal-profile/profile' },
-          { text: 'Pinned Repositories', link: '/personal-profile/pinned-repositories' }
+          { text: 'Personal Profile', link: '/profile/personal-profile' },
+          { text: 'Pinned Repositories', link: '/profile/pinned-repositories' }
         ]
       }
     ],

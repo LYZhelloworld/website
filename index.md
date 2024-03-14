@@ -3,23 +3,30 @@
 layout: home
 
 hero:
-  name: "Website"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "Hello, World!"
+  text: "A personal website powered by VitePress"
+  tagline: 0 error(s), 0 warning(s).
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: What is This Website?
+      link: introduction/what-is-this-website.md
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: GitHub
+      link: https://github.com/LYZhelloworld
+    - theme: alt
+      text: View Source
+      link: https://github.com/LYZhelloworld/website
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Introduction
+    details: What is this website and how to use it.
+    link: introduction/what-is-this-website
+  - title: Personal Profile
+    details: My personal profile
+    link: personal-profile/profile
+  - title: VitePress
+    details: VitePress is good. Try it.
+    link: https://vitepress.dev/
+  - title: Yet Another Section
+    details: I believe I should put something here but the margin is too small to contain it.
 ---
-

@@ -2,27 +2,33 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Website",
-  description: "A VitePress Site",
+  title: "lyzhelloworld.github.io",
+  description: "",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Home', link: '/' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Introduction',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'What is This Website?', link: 'introduction/what-is-this-website' },
+          { text: 'Getting Started', link: 'introduction/getting-started' }
+        ]
+      },
+      {
+        text: 'Personal Profile',
+        items: [
+          { text: 'Profile', link: 'personal-profile/profile' },
+          { text: 'Pinned Repositories', link: 'personal-profile/pinned-repositories' }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/LYZhelloworld' }
     ]
   }
 })

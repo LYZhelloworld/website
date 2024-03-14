@@ -1,0 +1,24 @@
+{
+  "name": "website",
+  "version": "4.0.0",
+  "description": "Source code of lyzhelloworld.github.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LYZhelloworld/Website.git"
+  },
+  "keywords": [
+    "vitepress",
+    "vue",
+    "javascript"
+  ],
+  "author": "Helloworld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LYZhelloworld/Website/issues"
+  },
+  "homepage": "https://github.com/LYZhelloworld/Website#readme"
+}

@@ -15,15 +15,15 @@ export default defineConfig({
       {
         text: 'Introduction',
         items: [
-          { text: 'What is This Website?', link: 'introduction/what-is-this-website' },
-          { text: 'Getting Started', link: 'introduction/getting-started' }
+          { text: 'What is This Website?', link: '/introduction/what-is-this-website' },
+          { text: 'Getting Started', link: '/introduction/getting-started' }
         ]
       },
       {
-        text: 'Personal Profile',
+        text: 'Profile',
         items: [
-          { text: 'Profile', link: 'personal-profile/profile' },
-          { text: 'Pinned Repositories', link: 'personal-profile/pinned-repositories' }
+          { text: 'Personal Profile', link: '/profile/personal-profile' },
+          { text: 'Pinned Repositories', link: '/profile/pinned-repositories' }
         ]
       }
     ],

@@ -1,4 +1,4 @@
-# Profile
+# Personal Profile
 
 ## Name
 Prefer not to answer. I like to be anonymous on the internet.

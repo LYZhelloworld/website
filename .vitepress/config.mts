@@ -2,8 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "lyzhelloworld.github.io",
-  description: "",
+  title: "Hello, World!",
+  description: "A personal website powered by VitePress",
+  srcExclude: ['**/README.md'],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

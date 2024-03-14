@@ -4,7 +4,9 @@
   "description": "Source code of lyzhelloworld.github.io",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/LYZhelloworld/Website/issues"
   },
-  "homepage": "https://github.com/LYZhelloworld/Website#readme"
+  "homepage": "https://github.com/LYZhelloworld/Website#readme",
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.45"
+  }
 }

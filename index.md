@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: What is This Website?
-      link: introduction/what-is-this-website.md
+      link: /introduction/what-is-this-website.md
     - theme: alt
       text: GitHub
       link: https://github.com/LYZhelloworld
@@ -20,10 +20,10 @@ hero:
 features:
   - title: Introduction
     details: What is this website and how to use it.
-    link: introduction/what-is-this-website
+    link: /introduction/what-is-this-website
   - title: Personal Profile
     details: My personal profile
-    link: personal-profile/profile
+    link: /personal-profile/profile
   - title: VitePress
     details: VitePress is good. Try it.
     link: https://vitepress.dev/
